@@ -1,0 +1,103 @@
+[
+    {
+      "name": "CodeFest 2024",
+      "type": "Online",
+      "theme": "Empowering Innovators",
+      "mode_of_hackathon": "Virtual",
+      "status": "Upcoming",
+      "startsin": "2024-08-10T09:00:00Z",
+      "website_link": "https://www.codefest.com",
+      "instagram_link": "https://www.instagram.com/codefest"
+    },
+    {
+      "name": "HackXcelerate 2024",
+      "type": "In-person",
+      "theme": "Driving Digital Transformation",
+      "mode_of_hackathon": "Hybrid",
+      "status": "Ongoing",
+      "startsin": "2024-07-20T10:00:00Z",
+      "website_link": "https://www.hackxcelerate.com",
+      "instagram_link": "https://www.instagram.com/hackxcelerate"
+    },
+    {
+      "name": "InnoHacks 2024",
+      "type": "Online",
+      "theme": "Innovating for Social Impact",
+      "mode_of_hackathon": "Virtual",
+      "status": "Completed",
+      "startsin": "2024-06-25T08:00:00Z",
+      "website_link": "https://www.innohacks.com",
+      "instagram_link": "https://www.instagram.com/innohacks"
+    },
+    {
+      "name": "CodeFusion 2024",
+      "type": "Online",
+      "theme": "Fostering Collaboration",
+      "mode_of_hackathon": "Virtual",
+      "status": "Upcoming",
+      "startsin": "2024-09-05T09:00:00Z",
+      "website_link": "https://www.codefusion.com",
+      "instagram_link": "https://www.instagram.com/codefusion"
+    },
+    {
+      "name": "HackTech 2024",
+      "type": "In-person",
+      "theme": "Exploring Emerging Technologies",
+      "mode_of_hackathon": "On-site",
+      "status": "Upcoming",
+      "startsin": "2024-09-20T10:00:00Z",
+      "website_link": "https://www.hacktech.com",
+      "instagram_link": "https://www.instagram.com/hacktech"
+    },
+    {
+      "name": "InnoFusion 2024",
+      "type": "Hybrid",
+      "theme": "Innovating Across Boundaries",
+      "mode_of_hackathon": "Hybrid",
+      "status": "Ongoing",
+      "startsin": "2024-07-15T09:00:00Z",
+      "website_link": "https://www.innofusion.com",
+      "instagram_link": "https://www.instagram.com/innofusion"
+    },
+    {
+      "name": "CodeHive 2024",
+      "type": "Online",
+      "theme": "Building the Future with Code",
+      "mode_of_hackathon": "Virtual",
+      "status": "Upcoming",
+      "startsin": "2024-08-30T09:00:00Z",
+      "website_link": "https://www.codehive.com",
+      "instagram_link": "https://www.instagram.com/codehive"
+    },
+    {
+      "name": "HackathonX 2024",
+      "type": "In-person",
+      "theme": "Innovating for Sustainability",
+      "mode_of_hackathon": "On-site",
+      "status": "Ongoing",
+      "startsin": "2024-07-10T10:00:00Z",
+      "website_link": "https://www.hackathonx.com",
+      "instagram_link": "https://www.instagram.com/hackathonx"
+    },
+    {
+      "name": "DevFest 2024",
+      "type": "Online",
+      "theme": "Empowering Developers Worldwide",
+      "mode_of_hackathon": "Virtual",
+      "status": "Completed",
+      "startsin": "2024-06-15T08:00:00Z",
+      "website_link": "https://www.devfest.com",
+      "instagram_link": "https://www.instagram.com/devfest"
+    },
+    {
+      "name": "TechSpark 2024",
+      "type": "Hybrid",
+      "theme": "Sparking Innovation Everywhere",
+      "mode_of_hackathon": "Hybrid",
+      "status": "Upcoming",
+      "startsin": "2024-09-15T09:00:00Z",
+      "website_link": "https://www.techspark.com",
+      "instagram_link": "https://www.instagram.com/techspark"
+    }
+  ]
+  
