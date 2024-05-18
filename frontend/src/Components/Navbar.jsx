@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Home from "../Pages/Home";
 import image1 from "../assets/Hackit__1_-removebg-preview.png";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
+import './Navbar.css'
 
 
 const Navbar = () => {
@@ -52,8 +53,13 @@ const Navbar = () => {
           <span className="text-md">BLOG</span>
         </NavLink>
       </div>
-      <div className="h-16 w-16 flex justify-center items-center">
-        <CgProfile className="text-3xl text-gray-600"></CgProfile>
+      {/* <div className="h-16 w-16 flex justify-center items-center"> */}
+        {/* <CgProfile className="text-3xl text-gray-600"></CgProfile> */}
+      {/* </div> */}
+      <div className="nav-login">
+        {localStorage.getItem('auth-token')
+        ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
+        :<Link to='/login'><button>Login</button></Link>}
       </div>
     </nav>
   );
