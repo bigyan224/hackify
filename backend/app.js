@@ -76,7 +76,7 @@ app.post('/signup',async (req,res) => {
       res.json({success:false,errors:"Wrong Email ID"})
     }
   })
-  
+
 app.post('/upload_hackathon',upload.single('cover_image'),async (req,res) => {
   const hackathon = new Hackathons({
     name:req.body.name,
@@ -108,6 +108,18 @@ app.post('/upload_hackathon',upload.single('cover_image'),async (req,res) => {
         res.send(data)
     })
   })
+
+  app.get('/hackathons/:id', async (req, res) => {
+    try {
+      const hackathon = await Hackathons.findById(req.params.id);
+      if (!hackathon) {
+        return res.status(404).json({ error: 'Hackathon not found' });
+      }
+      res.json(hackathon);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
 
 app.listen(3000,()=>{
     console.log("server started at port: ",PORT);

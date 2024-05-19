@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 const Organizehack = () => {
   const [formData, setFormData] = useState({
     name: '',
-    cover_image: '',
+    cover_image: null,
     about: '',
     email: '',
     themes:[],
@@ -28,7 +28,7 @@ const Organizehack = () => {
     "Blockchain",
   ]);
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type, checked, files } = e.target;
     if (type === 'checkbox') {
       setFormData((prevData) => {
         if (checked) {
@@ -43,6 +43,11 @@ const Organizehack = () => {
           };
         }
       });
+    } else if (type === 'file') {
+      setFormData({
+        ...formData,
+        [name]: files[0]
+      });
     } else {
       setFormData({
         ...formData,
@@ -51,18 +56,19 @@ const Organizehack = () => {
     }
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission with formData
-    console.log(formData);
-  
+
+    const data = new FormData();
+    for (const key in formData) {
+      data.append(key, formData[key]);
+    }
+
     // Example: Sending formData to backend
     fetch('http://localhost:3000/upload_hackathon', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
+      body: data,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -78,7 +84,7 @@ const Organizehack = () => {
     <div className="">
       <Navbar></Navbar>
       <div className="flex justify-center items-center">
-        <form action="/upload_hackathon" method="post" className="flex gap-6 flex-col mt-4 w-1/2 ml-12" onSubmit={handleSubmit}>
+        <form action="/upload_hackathon" method="post" className="flex gap-6 flex-col mt-4 w-1/2 ml-12" onSubmit={handleSubmit} encType="multipart/form-data">
           <div className="flex flex-col gap-2">
             <label htmlFor="hackathon-name" className="uppercase font-bold ">
               Name

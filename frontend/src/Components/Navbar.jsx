@@ -1,12 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Home from "../Pages/Home";
 import image1 from "../assets/Hackit__1_-removebg-preview.png";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
+import './Navbar.css'
 
 
 const Navbar = () => {
   return (
-    <nav className="h-20 w-full flex justify-between items-center  px-8 py-4 border-b-2 bg-white sticky top-0 z-10">
+    <nav className="h-20 w-full flex justify-between items-center  px-8 py-4 border-b-2 bg-gray-100 sticky top-0">
       <div className="h-20 w-44  flex justify-center items-center">
         <img src={image1} alt="Hackit Logo" className="w-full" />
       </div>
@@ -52,8 +53,13 @@ const Navbar = () => {
           <span className="text-md">BLOG</span>
         </NavLink>
       </div>
-      <div className="h-16 w-16 flex justify-center items-center">
-        <CgProfile className="text-3xl text-gray-600"></CgProfile>
+      {/* <div className="h-16 w-16 flex justify-center items-center"> */}
+        {/* <CgProfile className="text-3xl text-gray-600"></CgProfile> */}
+      {/* </div> */}
+      <div className="nav-login">
+        {localStorage.getItem('auth-token')
+        ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
+        :<Link to='/login'><button>Login</button></Link>}
       </div>
     </nav>
   );
