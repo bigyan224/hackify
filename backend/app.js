@@ -8,6 +8,11 @@ const bcrypt=require("bcrypt");
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const Users = require("./models/Usermodel")
+const Hackathons = require("./models/Hackathon")
+const Teams = require("./models/Teammodel")
+
+require('dotenv').config();
+
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -30,7 +35,7 @@ function isvalid(req,res,next){
     }
 }
 app.get("/",isvalid,(req,res,next)=>{
-    
+
     
 })
 
@@ -83,6 +88,30 @@ app.post('/login',async (req,res) => {
     else{
       res.json({success:false,errors:"Wrong Email ID"})
     }
+  })
+app.post('/upload_hackathon',async (req,res) => {
+  const hackathon = new Hackathons({
+    name:req.body.name,
+    cover_image:req.body.cover_image,
+    about:req.body.about,
+    email:req.body.email,
+    themes:req.body.themes,
+    themes:req.body.themes,
+    min_team:req.body.min_team,
+    max_team:req.body.max_team,
+    venue:req.body.venue,
+    website:req.body.website,
+    application_open:req.body.application_open,
+    application_close:req.body.application_close,
+    hackathon_starts:req.body.hackathon_starts,
+    hackathon_ends:req.body.hackathon_ends,
+    prize_pool:req.body.prize_pool
+  })
+
+  await hackathon.save();
+
+  res.json({success:true})
+
   })
 
 app.listen(3000,()=>{

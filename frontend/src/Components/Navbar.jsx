@@ -6,7 +6,7 @@ import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   return (
-    <nav className="h-20 w-full flex justify-between items-center  px-8 py-4 border-b-2 bg-white sticky top-0">
+    <nav className="h-20 w-full flex justify-between items-center  px-8 py-4 border-b-2 bg-white sticky top-0 z-10">
       <div className="h-20 w-44  flex justify-center items-center">
         <img src={image1} alt="Hackit Logo" className="w-full" />
       </div>

@@ -1,20 +1,66 @@
+const mongoose = require('mongoose');
 
-const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/hackify")
-const userSchema = new mongoose.Schema({
+// Load environment variables from .env file
+require('dotenv').config();
+
+// Connect to MongoDB using the MONGODB_URI environment variable
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
+
+  const userSchema = new mongoose.Schema({
     username: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
+      unique: true
     },
     email: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
+      unique: true
     },
     password: {
-        type: String,
-        required: true,
+      type: String,
+      required: true
     },
-});
+    bio: String,
+    avatar: String,
+    registeredHackathons: [{
+      hackathon: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hackathon'
+      },
+      status: {
+        type: String,
+        enum: ['registered', 'team_selected', 'not_selected'],
+        default: 'registered'
+      },
+      chatAccess: {
+        type: Boolean,
+        default: false
+      }
+    }],
+    participatedHackathons: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Hackathon'
+    }],
+    organizedHackathons: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Hackathon'
+    }],
+    role: {
+      type: String,
+      enum: ['user', 'admin'],
+      default: 'user'
+    }
+  }, { timestamps: true });
+  
+  const User = mongoose.model('User', userSchema);
+  
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = User;
