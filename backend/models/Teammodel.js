@@ -20,7 +20,7 @@ const teamSchema = new mongoose.Schema({
   teamcode:String,
   status: {
     type: String,
-    enum: ['pending', 'active', 'completed'],
+    enum: ['pending', 'selected', 'rejected'],
     default: 'pending'
   }
 }, { timestamps: true });

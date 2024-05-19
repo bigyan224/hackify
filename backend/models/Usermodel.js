@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGODB_URI)
       },
       status: {
         type: String,
-        enum: ['registered', 'team_selected', 'not_selected'],
+        enum: ['pending', 'active', 'completed'],
         default: 'registered'
       },
       chatAccess: {
